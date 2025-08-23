@@ -8,11 +8,13 @@ Using Python, I explored the data to better understand who Twisto’s customers 
 
 # The Questions
 
-Below are the questions I want to answer in my project:
+In this project, I aim to explore three main areas:
 
-1. 
-2. 
-3. 
+1. What is the socio-demographic profile of Twisto’s customers, and how does it change over time or by channel?
+2. Do Apple and Android users differ in their purchasing behavior?
+3. How do deferral rates develop over time, and do they vary across channels?
+
+![Case study task](twisto_project\images\twisto_case_study.png)
 
 # Tools I Used
 
