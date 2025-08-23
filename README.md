@@ -99,7 +99,7 @@ View my notebook with detailed steps here: [Demographic_analysis.ipynb](twisto_p
 
 ![gender_distribution_over_time.png](twisto_project/images/gender_distribution_over_time.png)
 
-*Stacked bar chart showing how the composition of acquired users changed over time, from October 2014 to January 2020.*
+*Stacked bar chart showing how the composition of acquired users changed over time (October 2014 to January 2020).*
 
 ### Insights:
 
@@ -125,7 +125,7 @@ View my notebook with detailed steps here: [OS_users_analysis.ipynb](twisto_proj
 
 
 
-## 3. ?
+## 3. How do deferral rates develop over time, and do they vary across channels??
 
 
 View my notebook with detailed steps here: []().
