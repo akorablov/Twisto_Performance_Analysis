@@ -83,11 +83,11 @@ View my notebook with detailed steps here: [Data_cleaning_steps.ipynb](twisto_pr
 
 Each Jupyter notebook for this project aimed at investigating specific aspects of the data job market. Here’s how I approached each question:
 
-## 1. ?
+## 1. What is the socio-demographic profile of Twisto’s customers, and how does it change over time or by channel??
 
 
 
-View my notebook with detailed steps here: []().
+View my notebook with detailed steps here: [Demographic_analysis.ipynb](twisto_project/2_Demographic_analysis.ipynb).
 
 ### Visualize Data
 
@@ -104,10 +104,10 @@ View my notebook with detailed steps here: []().
 ### Insights:
 
 
-## 2. ?
+## 2. Do Apple and Android users differ in their purchasing behavior?
 
 
-View my notebook with detailed steps here: []().
+View my notebook with detailed steps here: [OS_users_analysis.ipynb](twisto_project/3_OS_users_analysis.ipynb).
 
 ### Visualize Data
 
@@ -155,7 +155,5 @@ View my notebook with detailed steps here: []().
 
 
 # Conclusion
-
-
 
 
