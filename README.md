@@ -97,9 +97,9 @@ View my notebook with detailed steps here: [Demographic_analysis.ipynb](twisto_p
 
 ### Results
 
-![]()
+![gender_distribution_over_time.png](twisto_project/images/gender_distribution_over_time.png)
 
-* *
+*Stacked bar chart showing how the composition of acquired users changed over time, from October 2014 to January 2020.*
 
 ### Insights:
 
