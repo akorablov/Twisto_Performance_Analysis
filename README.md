@@ -31,27 +31,53 @@ For this project, I worked with several tools that supported both analysis and p
 
 # Data Preparation and Cleanup
 
-This section outlines the steps taken to prepare the data for analysis, ensuring accuracy and usability.
-
+In this section, I describe the steps taken to prepare the dataset for analysis, ensuring that it is accurate, clean, and ready for exploration.
 
 ## Import & Clean Up Data
 
-I start by importing necessary libraries and loading the dataset, followed by initial data cleaning tasks to ensure data quality.
+First, I imported the necessary libraries and loaded the dataset, then extracted individual data frames for different aspects of the data.
 
 ```python
+import pandas as pd
+import streamlit as st
 
+# Loading of Excel file
+excel_file = pd.read_excel('data_source/Twisto_data.xlsx', sheet_name=None)
+
+# Extracting of individual DataFrames
+df_base = excel_file['profile_base']
+df_customer = excel_file['profile_customer']
+df_extension = excel_file['profile_extension']
+df_apps = excel_file['profile_apps']
+df_transactions = excel_file['profile_transactions']
 
 ```
-
-## Filter Data
-
-To focus my analysis on the
+Next, I performed data cleaning tasks to ensure quality and consistency.
 
 ```python
+# Correct specific incorrect dates
+df_base['date_upgraded'] = df_base['date_upgraded'].replace({
+    '2090-10-12 09:55:36.000': '2014-10-12 09:55:36.000',
+    '2080-12-23 22:50:47.000': '2015-12-23 22:50:47.000'
+})
 
+# Convert to datetime
+df_base['date_upgraded'] = pd.to_datetime(df_base['date_upgraded'], errors='coerce')
 
+# Replace specific typos
+df_base['source'] = df_base['source'].replace({
+    'now saved card': 'now',
+    'now': 'now',  # redundant but keeps structure clear
+    'referrall': 'referral',
+    'affill': 'affiliate',
+    'affil': 'affiliate'
+
+# Fill in all empty values in df_transaction (column: category)
+
+df_transactions['category'] = df_transactions['category'].fillna('Unknown')
 
 ```
+View my notebook with detailed steps here: [Data_cleaning_steps.ipynb](twisto_project/1_Data_cleaning_steps.ipynb).
 
 # The Analysis
 
