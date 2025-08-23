@@ -64,16 +64,7 @@ df_base['date_upgraded'] = df_base['date_upgraded'].replace({
 # Convert to datetime
 df_base['date_upgraded'] = pd.to_datetime(df_base['date_upgraded'], errors='coerce')
 
-# Replace specific typos
-df_base['source'] = df_base['source'].replace({
-    'now saved card': 'now',
-    'now': 'now',  # redundant but keeps structure clear
-    'referrall': 'referral',
-    'affill': 'affiliate',
-    'affil': 'affiliate'
-
 # Fill in all empty values in df_transaction (column: category)
-
 df_transactions['category'] = df_transactions['category'].fillna('Unknown')
 
 ```
@@ -81,7 +72,7 @@ View my notebook with detailed steps here: [Data_cleaning_steps.ipynb](twisto_pr
 
 # The Analysis
 
-Each Jupyter notebook for this project aimed at investigating specific aspects of the data job market. Here’s how I approached each question:
+Each Jupyter Notebook in this project focuses on a specific aspect of the company's performance. Below is an overview of how I approached each question:
 
 ## 1. What is the socio-demographic profile of Twisto’s customers, and how does it change over time or by channel??
 
