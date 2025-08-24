@@ -154,7 +154,7 @@ summary_table = pd.DataFrame.from_dict({
 ## 3. How do deferral rates develop over time, and do they vary across channels?
 
 
-View my notebook with detailed steps here: []().
+View my notebook with detailed steps here: [Deferral_rate_analysis](twisto_project/4_Deferral_rate_analysis.ipynb).
 
 #### Visualize Data 
 
