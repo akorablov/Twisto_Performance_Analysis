@@ -138,7 +138,8 @@ summary_table = pd.DataFrame.from_dict({
 }, orient='index')
 ```
 ### Results
-![ios_vs_android_stats](twisto_project\images\ios_vs_android_stats.png)  
+
+![ios_vs_android_stats](twisto_project/images/ios_vs_android_stats.png)  
 *Table summarizes key purchasing metrics by platform.*
 
 ### Insights:
