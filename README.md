@@ -82,7 +82,9 @@ View my notebook with detailed steps here: [Demographic_analysis.ipynb](twisto_p
 
 ```python
 # Group data
-df_gender_time = df_cmr.groupby([df_cmr['date_upgr'].dt.to_period("M"), 'gender'])['user'].count().unstack(fill_value=0)
+df_gender_time = df_cmr.groupby(
+  [df_cmr['date_upgr'].dt.to_period("M"), 'gender'])['user'].count().unstack(fill_value=0
+  )
 
 # Plot setup
 plt.figure(figsize=(20,10))
@@ -109,9 +111,15 @@ plt.show()
 
 ![gender_distribution_over_time.png](twisto_project/images/gender_distribution_over_time.png)
 
-*Stacked bar chart showing how the composition of acquired users changed over time (October 2014 to January 2020).*
+*Stacked bar chart showing how the composition of acquired users changed over time (October 2014 to Fabruary 2020).*
 
 ### Insights:
+
+- **Young Adult Dominance:** The majority of Twisto’s customers are young adults, primarily aged 18-24 (36%), followed by 25-34 (32%). This trend is stable over time and is even more pronounced among Twisto cardholders (18-24 make up 35%), highlighting the importance of targeting products and marketing to this demographic.
+
+- **Gender and Education Patterns:** Males slightly outnumber females, with the shift occurring from 2018 onward. Most customers have a high school education, are single, and do not have children. These characteristics suggest opportunities for marketing strategies that resonate with young, independent, and digitally savvy consumers.
+
+- **Channel Effectiveness:** The most effective acquisition channels are “now” and “performance+organic,” performing consistently across genders, ages, and periods. Males are more likely than females to register via “ambassadors” or “referral” programs, indicating potential to optimize referral and ambassador campaigns for higher conversion among male users.
 
 
 ## 2. Do Apple and Android users differ in their purchasing behavior?
