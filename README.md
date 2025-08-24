@@ -137,7 +137,7 @@ View my notebook with detailed steps here: [OS_users_analysis.ipynb](twisto_proj
 
 
 
-## 3. How do deferral rates develop over time, and do they vary across channels??
+## 3. How do deferral rates develop over time, and do they vary across channels?
 
 
 View my notebook with detailed steps here: []().
