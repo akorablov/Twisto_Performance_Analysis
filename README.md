@@ -74,16 +74,37 @@ View my notebook with detailed steps here: [Data_cleaning_steps.ipynb](twisto_pr
 
 Each Jupyter Notebook in this project focuses on a specific aspect of the company's performance. Below is an overview of how I approached each question:
 
-## 1. What is the socio-demographic profile of Twisto’s customers, and how does it change over time or by channel??
+## 1. What is the socio-demographic profile of Twisto’s customers, and how does it change over time or by channel?
 
-
+To answer this question, I analyzed the customer dataset to calculate total customers, the distribution of male and female customers, average age, education levels, and family size. I also created age bins and examined how the demographics of acquired customers, including gender, age, and education, evolved over time and across different acquisition channels.
 
 View my notebook with detailed steps here: [Demographic_analysis.ipynb](twisto_project/2_Demographic_analysis.ipynb).
 
 ### Visualize Data
 
 ```python
+# Group data
+df_gender_time = df_cmr.groupby([df_cmr['date_upgr'].dt.to_period("M"), 'gender'])['user'].count().unstack(fill_value=0)
 
+# Plot setup
+plt.figure(figsize=(20,10))
+colors = ['#6baed6', '#fb6a6a', '#bdbdbd']  # blue, red, gray
+df_gender_time.plot(kind='bar', stacked=True, width=0.75, color=colors)
+
+plt.title("Gender Distribution Over Time", fontsize=14)
+plt.xlabel("")
+plt.ylabel("Number of Customers", fontsize=12)
+
+# Show every 3rd label with month names
+N = 3
+xticks = range(0, len(df_gender_time), N)
+xticklabels = [x.strftime('%b %Y') for x in df_gender_time.index.to_timestamp()[::N]]
+plt.xticks(ticks=xticks, labels=xticklabels, rotation=45, ha='right')
+
+plt.legend(title='Gender', fontsize=11, title_fontsize=12)
+sns.despine(top=True, right=True)
+plt.tight_layout()
+plt.show()
 ```
 
 ### Results
