@@ -1,7 +1,7 @@
 # Overview
 Welcome to my analysis of the performance of a fintech company in the Czech Republic. This project focuses on [Twisto.cz](https://www.twisto.cz) and was created as part of a [case study](twisto_project/images/twisto_case_study.png) during an interview process.  
 
-The dataset provided by the company includes information about new client registrations, customer demographics such as age, gender, and education, as well as details of transactions and the use of payment extensions. 
+[The dataset](twisto_project/data_source) provided by the company includes information about new client registrations, customer demographics such as age, gender, and education, as well as details of transactions and the use of payment extensions. 
 
 Using Python, I explored the data to better understand who Twisto’s customers are, how they behave when making purchases, and how often payments are deferred. The goal of this project is to present an accessible, data-driven overview of customer behavior and highlight insights that could support business and product decisions.
 
@@ -124,23 +124,30 @@ plt.show()
 
 ## 2. Do Apple and Android users differ in their purchasing behavior?
 
+To ensure accurate calculations, I first created a dictionary categorizing users by iOS, Android, and Unknown platforms. This allowed me to filter the data correctly and compute key metrics such as total users, average transactions per user, and average spend. I also identified the top purchase categories and analyzed how user behavior varies across them.
 
 View my notebook with detailed steps here: [OS_users_analysis.ipynb](twisto_project/3_OS_users_analysis.ipynb).
 
 ### Visualize Data
-
 ```python
-
-
+# Combine into one DataFrame to create a table
+summary_table = pd.DataFrame.from_dict({
+    'iOS': ios_stats,
+    'Android': android_stats,
+    'Unknown': unknown_stats
+}, orient='index')
 ```
-
 ### Results
-
-![]()  
-* *
+![ios_vs_android_stats](twisto_project\images\ios_vs_android_stats.png)  
+*Table summarizes key purchasing metrics by platform.*
 
 ### Insights:
 
+- **iOS Users – High Engagement, Frequent Buyers**: iOS customers demonstrate strong engagement with the platform, averaging ~140 transactions per user. They tend to have lower average order values but are highly valuable for retention-focused strategies, cross-selling, upselling, and loyalty programs.
+
+- **Android Users – High-Value Transactions, Larger User Base**: Android dominates in overall revenue due to its larger user base and exhibits the highest average order value (~713). These users are ideal targets for premium bundles, big-ticket promotions, and bulk purchase incentives.
+
+- **Unknown OS Segment – Investigative Opportunity**: Users with unidentified operating systems show mid-tier spending patterns. This segment warrants further investigation to clarify data quality issues or capture untracked platforms, potentially unlocking additional growth opportunities.
 
 
 ## 3. How do deferral rates develop over time, and do they vary across channels?
@@ -165,8 +172,6 @@ View my notebook with detailed steps here: []().
 
 # What I Learned
 
-
-# Insights
 
 
 # Challenges I Faced
