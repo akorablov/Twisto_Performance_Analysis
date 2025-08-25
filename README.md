@@ -153,7 +153,26 @@ summary_table = pd.DataFrame.from_dict({
 
 ## 3. How do deferral rates develop over time, and do they vary across channels?
 
+Twisto offers a feature that allows customers to postpone their bill to a later due date (referred to as an extension). The deferral rate is defined as the share of customers who have used the extension at least once (used_extension=TRUE) relative to the total customer base.
 
+In this method, I calculated the number of newly acquired users in each quarter and measured what percentage of them ever used the extension at least once. While this method is simple, it has a limitation: it does not account for when customers actually used the extension. For example, a customer acquired in Q1 may only use the extension much later, which makes this metric less informative for understanding short-term adoption dynamics.
+
+```python
+deferral_by_quarter = (
+    df_ext_merged.groupby('acq_quarter')
+    .agg(
+        total_users=('user', 'nunique'),
+        users_with_extension=('used_extension', lambda x: (x == True).sum())
+    )
+)
+
+deferral_by_quarter['deferral_rate'] = deferral_by_quarter['users_with_extension'] / deferral_by_quarter['total_users']
+deferral_by_quarter.reset_index(inplace=True)
+```
+![Deferral_rate_total_customer_acqusition](twisto_project/images/deferral_rate_total_customer_acquisition.png)  
+*Line chart showing deferral rate trends based on new customer cohorts.*
+
+The second approach looks at customers who actively transacted in a given month and measures what share of them had ever used the extension. This view better reflects actual usage patterns because it focuses on active customers within each period rather than acquisition history alone.
 
 ```python
 monthly_deferral['deferral_rate'] = (
