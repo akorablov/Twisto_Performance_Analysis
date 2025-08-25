@@ -1,5 +1,5 @@
 # Overview
-Welcome to my analysis of the performance of a fintech company in the Czech Republic. This project focuses on [Twisto.cz](https://www.twisto.cz) and was created as part of a [case study](twisto_project/images/twisto_case_study.png) during an interview process.  
+Welcome to my analysis of a fintech company operating in the Czech Republic. This project focuses on [Twisto.cz](https://www.twisto.cz) and was created as part of a [case study](twisto_project/images/twisto_case_study.png) during an interview process.  
 
 [The dataset](twisto_project/data_source) provided by the company includes information about new client registrations, customer demographics such as age, gender, and education, as well as details of transactions and the use of payment extensions. 
 
@@ -110,7 +110,6 @@ plt.show()
 ### Results
 
 ![gender_distribution_over_time.png](twisto_project/images/gender_distribution_over_time.png)
-
 *Stacked bar chart showing how the composition of acquired users changed over time (October 2014 to Fabruary 2020).*
 
 ### Insights:
@@ -183,26 +182,52 @@ View my notebook with detailed steps here: [Deferral_rate_analysis](twisto_proje
 
 #### Visualize Data 
 
-
 ```python
-
+plt.figure(figsize=(16,6))
+sns.lineplot(
+    data=monthly_deferral,
+    x=monthly_deferral['trans_month'].astype(str),
+    y='deferral_rate',
+    marker='o',
+    linewidth=2,
+    markersize=6,
+    color='#2b8cbe'
+)
+plt.tight_layout()
+plt.show()
 ```
-
 #### Results
 
-![]()  
-* *
+![monthly_deferral_rate_transactions.png](twisto_project/images/monthly_deferral_rate_transactions.png)  
+*Line chart showing monthly deferral rate trends among transacting customers*
 
 #### Insights
+- In the first months, the deferral rate peaked at 100%. These values are misleading, as they were based on very few customers (small denominator). As the customer base grew, adoption became less universal; on average, about 1 in 4 customers with an extension history continued to make transactions.
 
+- The stabilization at 70% indicates that, over a long period, the vast majority of transacting users were also extension users, which is a strong signal of feature stickiness.
+
+- Customers acquired through performance and organic campaigns show the highest long-term deferral rates. This suggests that these channels attract users with a stronger affinity for Twisto’s postponement product compared to referrals or ambassador-driven signups.
 
 # What I Learned
 
+Throughout this project, I strengthened my analytical and technical skills while gaining practical experience in interpreting and communicating data insights. Here are a few specific things I learned:
 
+- I learned to look beyond raw trends, recognizing that early months with a small customer base can distort results. This helped me identify which patterns were statistically meaningful and which were not.
+
+- I improved my ability to translate numbers into clear narratives, supporting insights with concrete data. Comparing acquisition channels taught me how user behavior relates to marketing sources, uncovering long-term trends and feature engagement.
+
+- I enhanced my Python skills, using Pandas for data manipulation and Seaborn and Matplotlib for visualization, which allowed me to perform complex analyses more efficiently.
 
 # Challenges I Faced
 
+This project presented several challenges that became valuable learning experiences:
+
+- **Data Inconsistencies**: Managing missing or inconsistent data required careful cleaning and validation to ensure the accuracy and reliability of the analysis.
+
+- **Complex Data Visualization**: Creating clear and effective visualizations from complex datasets was challenging but essential for conveying insights meaningfully.
+
+- **Balancing Breadth and Depth**: Finding the right balance between exploring data in detail and maintaining a comprehensive overview required constant judgment to avoid getting lost in the minutiae while still uncovering key insights.
 
 # Conclusion
 
-
+This analysis of Twisto’s customers and the payment extension feature has been highly informative, highlighting key patterns in user behavior and channel performance. I learned a lot about user behavior, differences between iOS and Android users, and which channels drive the most engaged customers. The project reinforced the value of careful data preparation and analysis, and showed how turning complex data into clear insights can help guide business and product decisions.
