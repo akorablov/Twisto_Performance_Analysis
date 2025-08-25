@@ -39,10 +39,10 @@ First, I imported the necessary libraries and loaded the dataset, then extracted
 import pandas as pd
 import streamlit as st
 
-# Loading of Excel file
+# Load an Excel file
 excel_file = pd.read_excel('data_source/Twisto_data.xlsx', sheet_name=None)
 
-# Extracting of individual DataFrames
+# Extract individual DataFrames
 df_base = excel_file['profile_base']
 df_customer = excel_file['profile_customer']
 df_extension = excel_file['profile_extension']
@@ -95,7 +95,7 @@ plt.title("Gender Distribution Over Time", fontsize=14)
 plt.xlabel("")
 plt.ylabel("Number of Customers", fontsize=12)
 
-# Show every 3rd label with month names
+# Show every 3d label with month names
 N = 3
 xticks = range(0, len(df_gender_time), N)
 xticklabels = [x.strftime('%b %Y') for x in df_gender_time.index.to_timestamp()[::N]]
