@@ -3,7 +3,7 @@ Welcome to my analysis of a fintech company operating in the Czech Republic. Thi
 
 [The dataset](twisto_project/data_source) provided by the company includes information about new client registrations, customer demographics such as age, gender, and education, as well as details of transactions and the use of payment extensions. 
 
-Using Python, I explored the data to better understand who Twisto’s customers are, how they behave when making purchases, and how often payments are deferred. The goal of this project is to present an accessible, data-driven overview of customer behavior and highlight insights that could support business and product decisions.
+Using `Python`, I explored the data to better understand who Twisto’s customers are, how they behave when making purchases, and how often payments are deferred. The goal of this project is to present an accessible, data-driven overview of customer behavior and highlight insights that could support business and product decisions.
 
 # The Questions
 In this project, I aim to explore three main areas:
@@ -70,7 +70,7 @@ View my notebook with detailed steps here: [Data_cleaning_steps.ipynb](twisto_pr
 
 # The Analysis
 
-Each Jupyter Notebook in this project focuses on a specific aspect of the company's performance. Below is an overview of how I approached each question:
+Each `Jupyter Notebook` in this project focuses on a specific aspect of the company's performance. Below is an overview of how I approached each question:
 
 ## 1. What is the socio-demographic profile of Twisto’s customers, and how does it change over time or by channel?
 
@@ -216,7 +216,7 @@ Throughout this project, I strengthened my analytical and technical skills while
 
 - I improved my ability to translate numbers into clear narratives, supporting insights with concrete data. Comparing acquisition channels taught me how user behavior relates to marketing sources, uncovering long-term trends and feature engagement.
 
-- I enhanced my Python skills, using Pandas for data manipulation and Seaborn and Matplotlib for visualization, which allowed me to perform complex analyses more efficiently.
+- I enhanced my `Python` skills, using Pandas for data manipulation and Seaborn and Matplotlib for visualization, which allowed me to perform complex analyses more efficiently.
 
 # Challenges I Faced
 
