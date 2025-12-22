@@ -16,7 +16,7 @@ In this project, I aim to explore three main areas:
 For this project, I worked with several tools that supported both analysis and presentation:
 
 - **Python** – the main language for exploring the data  
-  - **Pandas** for data analysis  
+  - **Pandas** for data manipulation, cleaning
   - **NumPy** for numerical operations  
   - **Matplotlib** and **Seaborn** for visualizations  
   - **Streamlit** for creating simple interactive views  
@@ -53,7 +53,7 @@ df_transactions = excel_file['profile_transactions']
 Next, I performed data cleaning tasks to ensure quality and consistency.
 
 ```python
-# Correct specific incorrect dates
+# Correct specific dates
 df_base['date_upgraded'] = df_base['date_upgraded'].replace({
     '2090-10-12 09:55:36.000': '2014-10-12 09:55:36.000',
     '2080-12-23 22:50:47.000': '2015-12-23 22:50:47.000'
